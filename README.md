@@ -3,3 +3,4 @@
 Contents:
 
 - [SNP Detection](SNP-detection.md)
+- [SNP Annotation](SNP-annotation.md)

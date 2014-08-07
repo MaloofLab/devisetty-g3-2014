@@ -2,7 +2,7 @@
 
 ## SNP Detection
 
-Perl modules and scripts:
+Tool:
 
 - [SNPtools](https://github.com/mfcovington/SNPtools) v1.5.0 (at [commit 4b8a284](https://github.com/mfcovington/SNPtools/tree/4b8a284d6e38bb508385f46572b89a4df2f035c1))
 
