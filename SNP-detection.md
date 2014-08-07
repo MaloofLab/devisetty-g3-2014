@@ -43,7 +43,7 @@ PAR2=IMB211
 SEQ_LIST=A01,A02,A03,A04,A05,A06,A07,A08,A09,A10
 ```
 
-### Find SNPs/indels
+### Find putative SNPs/INDELs for R500 vs. Chiifu or IMB211 vs. Chiifu
 
 ```sh
 for ID in $PAR2 $PAR1; do
@@ -57,12 +57,22 @@ for ID in $PAR2 $PAR1; do
       --indel_min 0.66 \
       --threads   $THREADS \
       --verbose
+done
+```
 
+### Remove false SNPs/INDELs at intron/exon junctions
+
+```sh
+for ID in $PAR2 $PAR1; do
     for SNP_FILE in $OUT_DIR/snps/$ID.*.snps.nogap.gap.csv; do
         $BIN/SNPfinder/02.0.filtering_SNPs_by_pos.pl $SNP_FILE
     done
 done
+```
 
+### Remove SNPs/INDELs with low coverage in reciprocal parental sample
+
+```sh
 $BIN/Coverage/reciprocal_coverage.pl \
   --bam      $BAM_DIR/$PAR1.20140121.bam \
   --par1     $PAR1 \
@@ -83,8 +93,12 @@ for CHR in A0{1..9} A10; do
       --par2 $PAR2 \
       --out  $OUT_DIR
 done
+```
 
-Rscript --vanilla $BIN/SNPfinder/classify-snps.r $OUT_DIR/master_snp_lists > $OUT_DIR/classify.2014-02-02.log
+### Extract R500 vs. IMB211 SNPs/INDELs 
+
+```sh
+Rscript --vanilla $BIN/SNPfinder/classify-snps.r $OUT_DIR/master_snp_lists > $OUT_DIR/classify.log
 
 mkdir $OUT_DIR/snp_master
 for CHR in A0{1..9} A10; do
