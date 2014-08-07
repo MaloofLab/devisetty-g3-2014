@@ -1,2 +1,5 @@
-devisetty-TBD-2014
-==================
+# Code supplement for Devisetty et al., 2014
+
+Contents:
+
+- [SNP Detection](SNP-detection)
