@@ -2,4 +2,4 @@
 
 Contents:
 
-- [SNP Detection](SNP-detection)
+- [SNP Detection](SNP-detection.md)
