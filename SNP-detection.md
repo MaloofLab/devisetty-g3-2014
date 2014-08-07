@@ -15,6 +15,19 @@ Input alignment files:
 - `R500.20140121.bam`
 - `IMB211.20140121.bam`
 
+Output SNP/INDEL files:
+
+- `polyDB.A01.nr`
+- `polyDB.A02.nr`
+- `polyDB.A03.nr`
+- `polyDB.A04.nr`
+- `polyDB.A05.nr`
+- `polyDB.A06.nr`
+- `polyDB.A07.nr`
+- `polyDB.A08.nr`
+- `polyDB.A09.nr`
+- `polyDB.A10.nr`
+
 ### Set environmental variables
 
 ```sh
